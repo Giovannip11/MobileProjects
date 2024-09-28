@@ -20,6 +20,8 @@ export default function RegisterPage() {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
+    width:'100%',
+    height:'100%'
   },
   container: {
     flex: 1,

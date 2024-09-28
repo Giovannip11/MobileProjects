@@ -1,11 +1,10 @@
 import React from 'react';
 import { Text, SafeAreaView, StyleSheet, Button, ImageBackground, View } from 'react-native';
-import { Card } from 'react-native-paper'; 
-import AssetExample from '../components/AssetExample'; 
+import { Card } from 'react-native-paper';
+import AssetExample from '../components/AssetExample';
+import UVv_Campus from '../assets/UVv_Campus.jpg';
 
-const UVv_Campus = require('../assets/UVv_Campus.jpg');
-
-export default function LoginPage() {
+export default function LoginPage({ navigation }) {
   return (
     <ImageBackground style={styles.background} source={UVv_Campus}>
       <SafeAreaView style={styles.container}>
@@ -19,7 +18,7 @@ export default function LoginPage() {
             <Button 
               title="Login" 
               color="#021E73" 
-              onPress={() => {}} 
+              onPress={() => navigation.navigate('Main')} 
             />
           </View>
           
@@ -27,9 +26,16 @@ export default function LoginPage() {
             <Button 
               title="Register" 
               color="#021E73" 
-              onPress={() => {}} 
+              onPress={() => navigation.navigate('Register')} 
             />
-            
+          </View>
+          
+          <View style={styles.button}>
+            <Button 
+              title="Esqueci a Senha" 
+              color="#021E73" 
+              onPress={() => navigation.navigate('ForgetPassword')} 
+            />
           </View>
         </View>
       </SafeAreaView>
@@ -42,8 +48,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    width:'100%',
-    height:'100%'
+    width: '100%',
+    height: '100%',
   },
   container: {
     width: '80%',
@@ -66,8 +72,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   button: {
-    marginVertical: 10, 
-    width: '50%',      
+    marginVertical: 10,
+    width: '50%',
   },
- 
 });
+
